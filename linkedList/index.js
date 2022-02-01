@@ -8,6 +8,10 @@ module.exports = class LinkedList{
         this.size = 1;
     }
 
+    isEmpty(){
+        return !this.size
+    }
+
     addFirst(value){
         let node = new listNode(value)
         node.next = this.head;
@@ -93,13 +97,13 @@ module.exports = class LinkedList{
        let second = first.next;
        while(second!=null){
            let rest = second.next;
-           second.next = first;
-           first = second;
-           second = rest;
-       }
+           second.next = first
+           first = second
+           second = rest
+       } 
        this.tail = this.head
        this.tail.next = null;
-       this.head = first;
+       this.head = first
+      
     }
-
 }
