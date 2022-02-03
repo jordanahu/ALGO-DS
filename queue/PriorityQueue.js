@@ -7,25 +7,32 @@ module.exports = class PriorityQueue{
         this.size = 0;
     }
 
-    enqueue(val){
+    enqueue(val, priority){
        //[1,2,6]
+        let itemObj = {val, priority};
         if(this.isEmpty()){
-            this.queue[this.count++] = val;
-            this.size++
+            this.queue[this.count] = itemObj
+            this.count++;
+            this.size++;
             return;
         }
+
         let added = false;
-        for(let index=this.size; index>=0; index--){
-            if(val < this.queue[index]){
-                this.queue[index+1] = this.queue[index]
-                this.queue[index] = val;
+        let index = this.size - 1;
+        while(index >= 0){
+            if(itemObj.priority < this.queue[index].priority){
+                this.queue[index + 1] = this.queue[index];
+                this.queue[index] = itemObj
                 added = true;
             }
+
+            index--
         }
 
         if(!added){
-            this.queue[this.count]= val
+            this.queue[this.count] = itemObj;
         }
+
         this.count++;
         this.size++;
         
@@ -42,10 +49,11 @@ module.exports = class PriorityQueue{
     }
 
     peek(){
-        return this.queue[0]
+        return this.queue[0].item
     }
 
     toArray(){
-        return this.queue
+        // return this.queue.map(({item})=>item)
+        return this.queue;
     }
 }
