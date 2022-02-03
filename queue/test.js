@@ -2,6 +2,8 @@ const ArrayQueue = require('./ArrayQueue');
 const StackQueue = require("./StackQueue");
 const LinkedListQueue = require("./LinkedListQueue")
 const CircularArray = require('./CircularArrays');
+const PriorityQueue = require("./PriorityQueue");
+
 
 module.exports = ()=>{
   //ARRAY QUEUE
@@ -42,14 +44,55 @@ module.exports = ()=>{
   // console.log(studentsLlQueue.size)
 
   //CIRCULAR_ARRAY
-  let arr = new CircularArray(3);
-  arr.push(3)
-  arr.push(4)
-  arr.push(5)
-  arr.push(6)
-  arr.push(7)
-  arr.push(8)
-  arr.push(9)
-  console.log(arr.fixedArr)
+  // let arr = new CircularArray(3);
+  // arr.push(3)
+  // arr.push(4)
+  // arr.push(5)
+  // arr.push(6)
+  // arr.push(7)
+  // arr.push(8)
+  // arr.push(9)
+  // console.log(arr.fixedArr)
+
+  //PRIORITY_QUEUE
+  let numbersQueue = new PriorityQueue();
+  numbersQueue.enqueue(2)
+  numbersQueue.enqueue(0)
+  numbersQueue.enqueue(13)
+  numbersQueue.enqueue(1)
+  numbersQueue.enqueue(12)
+  numbersQueue.enqueue(1)
+  numbersQueue.enqueue(10)
+  console.log(numbersQueue.toArray())
 
 }
+/*
+0
+[2]
+size = 1;
+count = 1;
+index = 0
+target = 2
+isSmall = true;
+index = 0 + 1 = 1;****(fake)
+[2,2]
+[0, 2]
+size = 2;
+count = 2
+/////////TOP IS FINISHED
+3
+[0, 2]
+index = 1;
+target = 2;
+isSmall = false;
+[0,2,3]
+
+index = 0;
+size = 3;
+count = 3;
+target = 0;
+isSmall = true;
+
+
+
+*/
