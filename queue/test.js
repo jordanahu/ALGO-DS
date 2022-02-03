@@ -56,13 +56,14 @@ module.exports = ()=>{
 
   //PRIORITY_QUEUE
   let numbersQueue = new PriorityQueue();
-  numbersQueue.enqueue(2)
-  numbersQueue.enqueue(0)
-  numbersQueue.enqueue(13)
-  numbersQueue.enqueue(1)
-  numbersQueue.enqueue(12)
-  numbersQueue.enqueue(1)
-  numbersQueue.enqueue(10)
+  numbersQueue.enqueue("Michel",2)
+  numbersQueue.enqueue("Edward",0)
+  numbersQueue.enqueue("Maryam",13)
+  numbersQueue.enqueue("Anthony",1)
+  numbersQueue.enqueue("Mohammed",12)
+  numbersQueue.enqueue("Naimabadi",1)
+  numbersQueue.enqueue("Ali",10)
+  numbersQueue.enqueue("Jordan",0)
   console.log(numbersQueue.toArray())
 
 }
