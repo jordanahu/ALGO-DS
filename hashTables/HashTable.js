@@ -24,13 +24,6 @@ module.exports = class HashTable{
         let hashKey = this.hash(key);
         let hashValue = this.createNode(item)
 
-        for(let key in this.table){
-            if(key == hashKey){
-                this.table[hashKey] = hashValue;
-                return;
-            }
-        }
-
 
         if(this.table[hashKey]){
             this.table[hashKey].addLast(hashValue);

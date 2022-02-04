@@ -3,7 +3,7 @@ const HashTable = require("./HashTable");
 
 module.exports = ()=>{
 
-    let studentsTable = new HashTable(10);
+    let studentsTable = new HashTable(3);
 
     studentsTable.put(4,"Jam")
     studentsTable.put(5,"Edward" )
