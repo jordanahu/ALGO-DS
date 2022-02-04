@@ -7,10 +7,7 @@ module.exports = class CircularArray{
     }
 
     push(val){
-        if(this.count >= this.arrSize){
-            this.count = this.count % this.arrSize
-        } 
-
+        this.count = this.count % this.arrSize
         this.fixedArr[this.count++] = val;
     }
 

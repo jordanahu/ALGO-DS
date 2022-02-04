@@ -67,33 +67,3 @@ module.exports = ()=>{
   console.log(numbersQueue.toArray())
 
 }
-/*
-0
-[2]
-size = 1;
-count = 1;
-index = 0
-target = 2
-isSmall = true;
-index = 0 + 1 = 1;****(fake)
-[2,2]
-[0, 2]
-size = 2;
-count = 2
-/////////TOP IS FINISHED
-3
-[0, 2]
-index = 1;
-target = 2;
-isSmall = false;
-[0,2,3]
-
-index = 0;
-size = 3;
-count = 3;
-target = 0;
-isSmall = true;
-
-
-
-*/

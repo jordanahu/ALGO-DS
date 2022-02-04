@@ -40,7 +40,9 @@ module.exports = class PriorityQueue{
     }
 
     dequeue(){
-        
+        this.count--
+        this.size--
+        return this.queue.shift();
         
     }
 

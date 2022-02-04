@@ -2,7 +2,7 @@
 let execLinkedList = require("./linkedList/test");
 let execStack = require("./stack/test");
 let execQueue = require("./queue/test")
-
+let execHashTable = require("./hashTables/test")
 
 //LINKED LIST
 // execLinkedList()
@@ -11,4 +11,7 @@ let execQueue = require("./queue/test")
 // execStack()
 
 //QUEUE
-execQueue()
+// execQueue()
+
+//HASH_TABLE
+execHashTable()
