@@ -3,6 +3,9 @@ let execLinkedList = require("./linkedList/test");
 let execStack = require("./stack/test");
 let execQueue = require("./queue/test")
 let execHashTable = require("./hashTables/test")
+let exectBinaryTree = require("./binaryTree/test");
+
+
 
 //LINKED LIST
 // execLinkedList()
@@ -14,4 +17,22 @@ let execHashTable = require("./hashTables/test")
 // execQueue()
 
 //HASH_TABLE
-execHashTable()
+// execHashTable()
+
+//BINARY TREE
+exectBinaryTree()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
