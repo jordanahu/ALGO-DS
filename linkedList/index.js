@@ -194,8 +194,17 @@ module.exports = class LinkedList{
     }
 
     reverse(){
-        //using the two-pointer technique;
-       
+       let left = this.head;
+       let right = this.head.next;
+       this.tail = this.head;
+       this.tail.next = null;
+       while(right!=null){
+        let next = right.next;
+        right.next = left;
+        left = right;
+        right = next;
+       }
+       this.head = left;
       
     }
 }
