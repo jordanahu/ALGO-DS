@@ -8,7 +8,7 @@ let exectBinaryTree = require("./binaryTree/test");
 
 
 //LINKED LIST
-execLinkedList()
+// execLinkedList()
 
 //STACK
 // execStack()
@@ -20,7 +20,7 @@ execLinkedList()
 // execHashTable()
 
 //BINARY TREE
-// exectBinaryTree()
+exectBinaryTree()
 
 
 
