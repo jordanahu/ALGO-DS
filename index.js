@@ -1,10 +1,9 @@
 #!/usr/bin/env node
-let execLinkedList = require("./linkedList/test");
-let execStack = require("./stack/test");
-let execQueue = require("./queue/test")
-let execHashTable = require("./hashTables/test")
-let exectBinaryTree = require("./binaryTree/test");
-
+// let execLinkedList = require("./linkedList/test");
+// let execStack = require("./stack/test");
+// let execQueue = require("./queue/test");
+// let exectBinaryTree = require("./binaryTree/test");
+let execDLinkedList  = require("./dLinkedList/test");
 
 
 //LINKED LIST
@@ -16,11 +15,12 @@ let exectBinaryTree = require("./binaryTree/test");
 //QUEUE
 // execQueue()
 
-//HASH_TABLE
-// execHashTable()
 
 //BINARY TREE
-exectBinaryTree()
+// exectBinaryTree()
+
+//DOUBLY LINKED LIST
+execDLinkedList()
 
 
 
