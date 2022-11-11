@@ -11,10 +11,7 @@ module.exports = ()=>{
     students.addFirst("Maryam");
     students.addChild("First Child", 2);
     students.addChild("Second Child", 3);
-    // console.log(students);
-    students.merge()
     console.log(students.toArray());
-    // console.log(students.getChildren())
 
 }
 

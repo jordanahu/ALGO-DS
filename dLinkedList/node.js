@@ -3,7 +3,6 @@ module.exports = class{
         this.value = value;
         this.next = next;
         this.prev = prev;
-        this.child = child;
     }
 }
 
