@@ -45,21 +45,6 @@ module.exports = class {
 
     }
 
-    addChild(value, pos){
-        let count = 1;
-        let current = this.head;
-        while(current){
-            if(count == pos){
-                current.child = new Node(value);
-                current.child.next = new Node("next child node");
-                current.child.next.prev = current.child;
-                current.child.next.child = new Node("nested child")
-            }
-            count++;
-            current = current.next;
-        }
-    }
-
     toArray() {
         let result = [];
         let current = this.head;
@@ -76,41 +61,5 @@ module.exports = class {
 
     }
 
-    merge(){
-        let current = this.head;
-        while(current){
-
-            if(current.child){
-                let last = current.child;
-                while(last){
-                    last = last.next;
-                }
-                
-                if(last?.next){
-                    last.next = current.next;
-                    last.next.prev = last;
-                }
-                current.next = current.child;
-                current.next.prev = current;
-
-                
-                current.child = null;
-
-            }else{
-
-                current = current.next;
-            }
-
-        }
-    }
-
-    getChildren(){
-        let res = [];
-        let current = this.head;
-        while(current){
-            current.child && res.push(current.child.value)
-            current = current.next;
-        }
-        return res;
-    }
+    
 }
