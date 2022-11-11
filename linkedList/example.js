@@ -55,5 +55,4 @@ function accToOne(n) {
 
 }
 
-console.log(accToOne(13))
 

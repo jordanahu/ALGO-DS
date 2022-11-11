@@ -66,6 +66,7 @@ module.exports = class BinaryTree{
         }
     }
 
+
     traverseDF(fn){
         let children = [this.root];
         while(children.length){

@@ -14,9 +14,11 @@ module.exports = class LinkedList{
             this.head = newNode;
             this.tail = newNode;
         } else {
-            let rest = this.head;
-            newNode.next = rest;
-            this.head = newNode
+            let rest = this.head.next;
+            // newNode.next = rest;
+            // this.head = newNode
+            this.head.next = newNode;
+            this.head.next.next = rest
         }
         this.#size++
     }
@@ -193,18 +195,105 @@ module.exports = class LinkedList{
         return this.head;
     }
 
+
     reverse(){
-       let left = this.head;
-       let right = this.head.next;
-       this.tail = this.head;
-       this.tail.next = null;
-       while(right!=null){
-        let next = right.next;
-        right.next = left;
-        left = right;
-        right = next;
-       }
-       this.head = left;
-      
+    
+        let prev = null;
+        let current = this.head;
+        while(current){
+            let rest = current.next;
+            current.next = prev;
+            prev = current;
+            current = rest;
+        }
+        this.head = prev
+        
+        // let left = this.head;
+        // let right = this.head.next;
+        // this.tail = left;
+        // this.tail.next = null;
+        // while(right!=null){
+        //     let rest = right.next;
+        //     right.next = left;
+        //     left = right;
+        //     right = rest;
+            
+        // }
+        // this.head = left;
+
+
     }
+
+    reverseMtoN(m, n){
+        console.log({m,n})
+        let rightPointer = JSON.parse(JSON.stringify(this.head));
+        let middleSidePointer = JSON.parse(JSON.stringify(this.head));
+        let middleSide = null;
+        let leftSide = JSON.parse(JSON.stringify(this.head));
+        let leftPointer = leftSide;
+        let rightSide;
+        let leftCounter = 1;
+        let rightCounter = 1;
+        let middleCounter = 1;
+        
+        while(leftPointer){
+            if(m - 1 == 0){
+                leftSide = {next:null};
+                break;
+            }
+            if(m-1 == leftCounter){
+                leftPointer.next = null;
+                break;
+            }
+            leftCounter++;
+            leftPointer = leftPointer.next;
+        }
+      
+
+        while(rightPointer){
+            if(n == rightCounter){
+                rightSide = rightPointer.next;
+                break;
+            }
+
+            rightCounter++;
+            rightPointer = rightPointer.next;
+        }
+
+        while(middleSidePointer){
+            let rest = middleSidePointer.next;
+            if(middleCounter >= m && middleCounter <= n){
+                middleSidePointer.next = middleSide;
+                middleSide = middleSidePointer
+                middleSidePointer = rest;
+            }
+            middleCounter++;
+            middleSidePointer = rest;
+        }
+
+        // merging leftSide, rightSide and middleSide
+        let firstTempPointer = leftSide;
+        let secondTempPointer = leftSide;
+        while(firstTempPointer.next){
+            firstTempPointer = firstTempPointer.next;
+        }
+        firstTempPointer.next = middleSide;
+
+        while(secondTempPointer.next){
+            secondTempPointer = secondTempPointer.next;
+        }
+
+        secondTempPointer.next = rightSide;
+
+        let tempPointer = leftSide;
+
+        let res = []
+        while(tempPointer){
+            tempPointer.value && res.push(tempPointer.value)
+            tempPointer = tempPointer.next;
+        }
+        console.log(res)
+    }
+
+
 }
