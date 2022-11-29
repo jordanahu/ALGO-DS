@@ -31,4 +31,5 @@ module.exports = class Stack{
     toArray(){
         return this.stack
     }
+
 }
